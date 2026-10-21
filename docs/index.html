@@ -1,0 +1,85 @@
+<!doctype html>
+<!-- COPY: awaiting Don -->
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Needful Things for Grok Build</title>
+<meta name="description" content="Grok Build plugin for Needful Things: browse listings, check credits, and prepare drafts you approve in the app.">
+<style>
+:root{color-scheme:light dark;--fg:#1a1a1a;--muted:#555;--bg:#fff;--line:#ddd;--code:#f4f4f4}
+@media (prefers-color-scheme:dark){:root{--fg:#eee;--muted:#aaa;--bg:#141414;--line:#333;--code:#222}}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--fg);font:16px/1.6 system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif}
+main{max-width:46rem;margin:0 auto;padding:2.5rem 1.25rem 4rem}
+h1{font-size:2rem;line-height:1.2;margin:0 0 .5rem}
+h2{font-size:1.25rem;margin:2.25rem 0 .5rem;padding-top:1rem;border-top:1px solid var(--line)}
+p.lede{color:var(--muted);font-size:1.1rem;margin-top:0}
+code{font:.9em ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;background:var(--code);padding:.1em .35em;border-radius:4px}
+table{width:100%;border-collapse:collapse;font-size:.95rem}
+th,td{text-align:left;padding:.45rem .5rem;border-bottom:1px solid var(--line);vertical-align:top}
+.note{border-left:3px solid var(--muted);padding:.25rem .9rem;color:var(--muted)}
+a{color:inherit}
+footer{margin-top:3rem;color:var(--muted);font-size:.9rem}
+</style>
+</head>
+<body>
+<main>
+<h1>Needful Things for Grok Build</h1>
+<p class="lede">Browse Needful Things from Grok Build. Search listings, check your posting credits and posts, and prepare drafts and publication proposals that you approve in the app.</p>
+
+<p class="note"><strong>Launching 28 October 2026.</strong> Until then the production addresses below are not live. Use a development address to preview.</p>
+
+<h2 id="what">What it does</h2>
+<p>The plugin connects Grok Build to the Needful Things remote MCP server for your region. It adds skills for discovery, drafts and approvals, plus a safety rule. It is configuration only: there are no hooks, no scripts and no secrets.</p>
+
+<h2 id="install">Install</h2>
+<ol>
+<li>In Grok Build, open the plugin marketplace and install <strong>Needful Things</strong> (<code>needful-things</code>).</li>
+<li>Set <code>NT_MCP_URL</code> to your region (see below). The default is EU production.</li>
+</ol>
+
+<h2 id="sign-in">Sign in</h2>
+<p>You don't need to paste an API key or token. Grok Build handles sign-in:</p>
+<ol>
+<li>Run <code>/mcps</code>, select <code>needful-things</code>, and press <code>i</code>.</li>
+<li>Sign in to Needful Things in your browser and choose permissions on the consent screen (Profile → My agents).</li>
+<li>Recommended: all read permissions plus <code>drafts:write</code> and <code>approvals:propose</code>. Favourites, saved searches and chat writes are opt-in.</li>
+</ol>
+<p>You can pause or revoke the connection any time in Profile → My agents.</p>
+
+<h2 id="regions">Regions and addresses</h2>
+<p>Sign-in is tied to a region. Use the region where your Needful Things account lives.</p>
+<table>
+<thead><tr><th>Region</th><th>Production</th><th>Development preview</th></tr></thead>
+<tbody>
+<tr><td>EU</td><td><code>https://nt-market-eu-prd.onrender.com/mcp</code></td><td><code>https://nt-market-eu-dev.onrender.com/mcp</code></td></tr>
+<tr><td>UK</td><td><code>https://nt-market-uk-prd.onrender.com/mcp</code></td><td><code>https://nt-market-uk-dev.onrender.com/mcp</code></td></tr>
+<tr><td>US</td><td><code>https://nt-market-us-prd.onrender.com/mcp</code></td><td><code>https://nt-market-us-dev.onrender.com/mcp</code></td></tr>
+</tbody>
+</table>
+<p>The first request after a quiet period can take up to a minute while the service wakes.</p>
+
+<h2 id="can">What it can and can't do</h2>
+<ul>
+<li><strong>Can:</strong> search and read listings, read your credits, posts, favourites, saved searches, drafts and chats, and create and edit drafts.</li>
+<li><strong>Needs your approval:</strong> publishing a post or extending one. The agent only proposes; you approve in the app before any credit is spent.</li>
+<li><strong>Opt-in:</strong> saving favourites and searches, and chat messages. Messages are always labelled as sent by your agent.</li>
+<li><strong>Never:</strong> sends unsolicited messages, shares your contact details, pays, or publishes without your approval.</li>
+</ul>
+
+<h2 id="privacy">Privacy and security</h2>
+<ul>
+<li>Sign-in uses OAuth. Tokens are stored by Grok Build, are tied to your region, and can be revoked in Profile → My agents.</li>
+<li>The plugin contains no credentials and runs no code on your machine.</li>
+<li>Listing and chat text is treated as untrusted content, never as instructions.</li>
+</ul>
+
+<h2 id="source">Source and licence</h2>
+<p>Source: <a href="https://github.com/Twiniti-Hub/needful-things-plugin">github.com/Twiniti-Hub/needful-things-plugin</a></p>
+<p>Licensed under MIT OR Apache-2.0, at your option.</p>
+
+<footer>Needful Things plugin for Grok Build · version 0.1.0</footer>
+</main>
+</body>
+</html>
