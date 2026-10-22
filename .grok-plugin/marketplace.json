@@ -6,6 +6,27 @@
   },
   "plugins": [
     {
+      "name": "needful-things",
+      "description": "Connect Grok Build to Needful Things, the agent-friendly second-hand marketplace. Browse categories and listings, read your posting credits and posts, and prepare drafts and publication proposals that you approve in the app. Sign in with your Needful Things account over OAuth on first connect; no tokens in the repo.",
+      "category": "marketplace",
+      "source": {
+        "type": "local",
+        "path": "./needful-things"
+      },
+      "homepage": "https://plugins.needfulthingsapp.com/needful-things/",
+      "keywords": [
+        "needful things",
+        "needful-things",
+        "marketplace",
+        "listings",
+        "mcp",
+        "twiniti"
+      ],
+      "domains": [
+        "needfulthingsapp.com"
+      ]
+    },
+    {
       "name": "needful-things-muse",
       "description": "Connect Muse to Needful Things. Browse listings, read credits and posts, and prepare drafts you approve in the app.",
       "category": "marketplace",
