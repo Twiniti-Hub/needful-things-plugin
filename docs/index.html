@@ -3,8 +3,8 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Needful Things for Grok Build</title>
-<meta name="description" content="Your Needful Things account, inside Grok Build. Browse listings by region, check credits and posts, and prepare drafts you approve in the app.">
+<title>Plugins for Grok Build</title>
+<meta name="description" content="Grok Build plugins.">
 <style>
 :root{color-scheme:light dark;--fg:#1a1a1a;--muted:#555;--bg:#fff;--line:#ddd;--code:#f4f4f4}
 @media (prefers-color-scheme:dark){:root{--fg:#eee;--muted:#aaa;--bg:#141414;--line:#333;--code:#222}}
@@ -27,71 +27,13 @@ footer{margin-top:3rem;color:var(--muted);font-size:.9rem}
 </head>
 <body>
 <main>
-<h1>Your Needful Things account, inside Grok Build.</h1>
-<p class="lede">Browse categories and listings by region, check your posting credits and posts, and prepare drafts and publication proposals that you approve in the Needful Things app.</p>
-<a class="cta" href="https://github.com/Twiniti-Hub/needful-things-plugin">View the plugin on GitHub</a>
-<p class="note"><strong>Launches 28 October 2026.</strong> Sign-in and the production addresses below become available at launch.</p>
-
-<h2 id="what">What it does</h2>
-<h3>Browse by region.</h3>
-<p>Search and read categories and listings in your account's region: EU, UK or US.</p>
-<h3>See your account at a glance.</h3>
-<p>Read your posting credits, your own posts, favourites, saved searches, drafts and chats.</p>
-<h3>Drafts and proposals, your approval.</h3>
-<p>Create and edit drafts, then propose publication or an extension. Nothing publishes and no credit is spent until you approve it in the Needful Things app.</p>
-
-<h2 id="setup">Set up in three steps <span class="badge">available from launch, 28 Oct</span></h2>
-<ol>
-<li><strong>Install the plugin and pick your region.</strong> In Grok Build, open the Marketplace tab (type <code>/marketplace</code>), select <code>needful-things</code> and press <code>i</code>. Or, from the terminal, run <code>grok plugin install needful-things --trust</code>. Then set <code>NT_MCP_URL</code> to your account's region (see below).</li>
-<li><strong>Sign in</strong> <span class="badge">available from launch, 28 Oct</span>. Run <code>/mcps</code>, select <code>needful-things</code> and press <code>i</code>. Sign in to Needful Things in the browser and choose scopes on the consent screen. There is no API key or token to paste.</li>
-<li><strong>Check it works.</strong> Call <code>list_categories</code> (read-only).</li>
-</ol>
-
-<h2 id="regions">Regions and addresses</h2>
-<p>Sign-in is region-bound. Use the region where your Needful Things account lives.</p>
+<main>
+<h1>Plugins for Grok Build</h1>
+<p class="lede">Plugins available from this site.</p>
 <table>
-<thead><tr><th>Region</th><th>Production (from 28 Oct)</th><th>Development preview</th></tr></thead>
-<tbody>
-<tr><td>EU (default)</td><td><code>https://nt-market-eu-prd.onrender.com/mcp</code></td><td><code>https://nt-market-eu-dev.onrender.com/mcp</code></td></tr>
-<tr><td>UK</td><td><code>https://nt-market-uk-prd.onrender.com/mcp</code></td><td><code>https://nt-market-uk-dev.onrender.com/mcp</code></td></tr>
-<tr><td>US</td><td><code>https://nt-market-us-prd.onrender.com/mcp</code></td><td><code>https://nt-market-us-dev.onrender.com/mcp</code></td></tr>
-</tbody>
+<tr><th>Plugin</th><th>What it does</th></tr>
+<tr><td><a href="/needful-things/">Needful Things</a></td><td>Browse listings by region, check credits and posts, and prepare drafts you approve in the Needful Things app.</td></tr>
 </table>
-<p>The development addresses are for previewing only. The first request after a quiet period can take up to a minute.</p>
-
-<h2 id="can">What it can and can't do</h2>
-<ul>
-<li><strong>Can:</strong> search and read listings, and read your credits, posts, favourites, saved searches, drafts and chats. It can create and edit drafts.</li>
-<li><strong>Approval-only:</strong> publishing and extensions. You approve them in the app before any credit is spent.</li>
-<li><strong>Opt-in:</strong> chat messages, favourites and saved searches. Any chat message is labelled as sent by your agent.</li>
-<li><strong>Never:</strong> it doesn't send unsolicited messages, share contact details, pay, or publish without your approval.</li>
-</ul>
-
-<h2 id="faq">FAQ</h2>
-<h3>Do I need an API key?</h3>
-<p>No. You sign in with your Needful Things account and Grok Build handles the sign-in. You can manage, pause or revoke the connection any time in Profile → My agents.</p>
-<h3>Can it publish or spend credits on its own?</h3>
-<p>No. Publishing and extensions are approval-only: you approve them in the app before any credit is spent. It never shares contact details, pays, or publishes without your approval.</p>
-<h3>Will it message other members?</h3>
-<p>Not unless you turn that on. Chat messages, favourites and saved searches are opt-in, and any chat message is labelled as sent by your agent.</p>
-<h3>Which region should I choose?</h3>
-<p>The one where your Needful Things account lives. Sign-in is region-bound, so an EU account uses the EU address, and so on.</p>
-
-<h2 id="privacy">Privacy and security</h2>
-<ul>
-<li>Sign-in uses OAuth. Grok Build stores the tokens. They are tied to your region, and you can revoke them in Profile → My agents.</li>
-<li>The plugin is configuration only. It contains no credentials and runs no hooks or scripts on your machine.</li>
-<li>Listing and chat text is treated as untrusted content, never as instructions.</li>
-</ul>
-
-<h2 id="start">Get started</h2>
-<p>Needful Things for Grok Build launches on 28 October 2026.</p>
-<a class="cta" href="https://github.com/Twiniti-Hub/needful-things-plugin">View the plugin on GitHub</a>
-
-<h2 id="licence">Source and licence</h2>
-<p>Source: <a href="https://github.com/Twiniti-Hub/needful-things-plugin">the needful-things-plugin repository on GitHub</a>. Licensed under MIT OR Apache-2.0, at your option.</p>
-
-<footer>Needful Things plugin for Grok Build · version 0.1.0</footer>
 </main>
 </body>
 </html>
