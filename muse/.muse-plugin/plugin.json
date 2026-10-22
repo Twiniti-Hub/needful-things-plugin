@@ -1,0 +1,69 @@
+{
+  "schemaVersion": 1,
+  "name": "needful-things-muse",
+  "displayName": "Needful Things",
+  "version": "0.1.0",
+  "description": "Connect Muse to Needful Things, the agent-friendly second-hand marketplace. Browse categories and listings, read posting credits and posts, and prepare drafts and publication proposals that the member approves in the app. Sign in with OAuth (read-only or full scopes) or an API key; no secrets in this repo.",
+  "author": {
+    "name": "Twiniti"
+  },
+  "homepage": "https://plugins.needfulthingsapp.com/needful-things/",
+  "repository": "https://github.com/Twiniti-Hub/needful-things-plugin",
+  "keywords": [
+    "needful things",
+    "needful-things",
+    "marketplace",
+    "mcp",
+    "muse",
+    "twiniti"
+  ],
+  "license": "MIT OR Apache-2.0",
+  "compat": {
+    "source": "native",
+    "manifestDir": ".muse-plugin"
+  },
+  "variables": {
+    "type": "object",
+    "properties": {
+      "NT_MCP_URL": {
+        "type": "string",
+        "title": "Needful Things MCP URL (region)",
+        "description": "Regional Needful Things MCP endpoint (Streamable HTTP). Default is EU production. Production: https://nt-market-eu-prd.onrender.com/mcp, https://nt-market-uk-prd.onrender.com/mcp, https://nt-market-us-prd.onrender.com/mcp. Development / preview: https://nt-market-eu-dev.onrender.com/mcp, https://nt-market-uk-dev.onrender.com/mcp, https://nt-market-us-dev.onrender.com/mcp. Tokens are region-bound: use the region where the Needful Things account lives. Production launches 28 Oct 2026; use a dev URL to preview before then.",
+        "default": "https://nt-market-eu-prd.onrender.com/mcp"
+      }
+    },
+    "required": [
+      "NT_MCP_URL"
+    ]
+  },
+  "capabilities": {
+    "skills": [
+      {
+        "id": "nt-mcp",
+        "path": "skills/nt-mcp/SKILL.md",
+        "enabledDefault": true
+      },
+      {
+        "id": "nt-discovery",
+        "path": "skills/nt-discovery/SKILL.md",
+        "enabledDefault": true
+      },
+      {
+        "id": "nt-drafts",
+        "path": "skills/nt-drafts/SKILL.md",
+        "enabledDefault": true
+      }
+    ],
+    "commands": [],
+    "hooks": [],
+    "mcpServers": [
+      {
+        "id": "needful-things",
+        "transport": "http",
+        "url": "${NT_MCP_URL}"
+      }
+    ],
+    "reminders": []
+  },
+  "rules": "rules"
+}

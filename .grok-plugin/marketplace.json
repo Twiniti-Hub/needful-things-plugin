@@ -1,0 +1,29 @@
+{
+  "name": "needful-things-plugins",
+  "description": "Needful Things marketplace connectors for agent platforms.",
+  "owner": {
+    "name": "Twiniti"
+  },
+  "plugins": [
+    {
+      "name": "needful-things-muse",
+      "description": "Connect Muse to Needful Things. Browse listings, read credits and posts, and prepare drafts you approve in the app.",
+      "category": "marketplace",
+      "source": {
+        "type": "local",
+        "path": "./muse"
+      },
+      "homepage": "https://plugins.needfulthingsapp.com/needful-things/",
+      "keywords": [
+        "needful things",
+        "needful-things",
+        "marketplace",
+        "muse",
+        "listings"
+      ],
+      "domains": [
+        "needfulthingsapp.com"
+      ]
+    }
+  ]
+}
