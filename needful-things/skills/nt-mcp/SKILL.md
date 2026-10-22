@@ -16,7 +16,8 @@ The Needful Things MCP is a remote HTTP server on each regional market cell. Thi
 3. On the consent screen (Profile → My agents) the recommended scopes are:
    - On: `discovery:read`, `account:read`, `favorites:read`, `searches:read`, `drafts:read`, `chats:read`, `drafts:write`, `approvals:propose`
    - Opt-in only: `favorites:write`, `searches:write`, `chats:write`
-4. Smoke test: call `list_categories` (read-only, no arguments).
+4. **Right after sign-in or reconnect succeeds**, call read-only `whoami` (requires `account:read`). Tell the user exactly: `I'm connected to <display name>'s Needful Things account (<market>).` using the tool's `displayName` and `market` fields. If `whoami` is not in `tools/list`, or the call fails because the server does not expose it yet, tell the user the Needful Things account could not be confirmed and continue.
+5. Smoke test: call `list_categories` (read-only, no arguments).
 
 Treat `tools/list` as authoritative: tools you did not grant a scope for are not listed.
 
