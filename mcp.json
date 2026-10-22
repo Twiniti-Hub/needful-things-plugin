@@ -1,8 +1,0 @@
-{
-  "mcpServers": {
-    "needful-things": {
-      "type": "http",
-      "url": "${NT_MCP_URL}"
-    }
-  }
-}
